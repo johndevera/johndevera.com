@@ -13,11 +13,16 @@ echo " ============== PYENV VERSION ============== "
 python_version="3.11.8"
 pyenv install $python_version
 pyenv local $python_version # Activate Python 3.9 for the current project
+pyenv version
 
 echo " ============== POETRY ENVIRONMENT ============== "
 poetry env use system
 poetry config virtualenvs.create true --local
 poetry config virtualenvs.in-project true --local
+poetry env info --path
+
+echo " ============== POETRY LOCK ============== "
+poetry lock
 
 echo " ============== POETRY INSTALL ============== "
 poetry install
@@ -28,11 +33,7 @@ poetry build
 echo " ============== POETRY CONFIG ============== "
 poetry config --list
 
-echo " ============== POETRY ENV INFO ============== "
-poetry env info --path
-
 echo " ============== UPDATE ZSH WTH ACTIVATE SCRIPT ============== "
-
 sh update_zshrc.sh
 
 # go back to original directory

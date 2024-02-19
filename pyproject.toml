@@ -8,6 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+streamlit = "1.31.1"
 
 [tool.poetry.group.dev.dependencies]
 ansible = "9.2.0"
@@ -15,6 +16,7 @@ ansible-lint = { version = "24.2.0", markers = "platform_system != 'Windows'" }
 autoflake = "2.2.1"
 black = {version = "24.2.0", extras = ["d", "jupyter"]}
 isort = "5.13.2"
+ipython = "8.21.0"
 mypy = "1.8.0"
 nb-clean = "3.2.0"
 poethepoet = "0.24.4"
