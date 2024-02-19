@@ -11,7 +11,7 @@ cd $SCRIPT_DIR
 
 echo " ============== PYENV VERSION ============== "
 python_version="3.11.8"
-pyenv install $python_version
+pyenv install $python_version --skip-existing
 pyenv local $python_version # Activate Python 3.9 for the current project
 pyenv version
 
