@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "johndevera"
+version = "0.1.0"
+description = "John de Vera - MONO REPO"
+authors = ["John de Vera"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+ansible = "9.2.0"
+ansible-lint = { version = "24.2.0", markers = "platform_system != 'Windows'" }
+autoflake = "2.2.1"
+black = {version = "24.2.0", extras = ["d", "jupyter"]}
+isort = "5.13.2"
+mypy = "1.8.0"
+nb-clean = "3.2.0"
+poethepoet = "0.24.4"
+ruff = "0.2.2"
+yamllint = "1.35.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+clean-jupyter-notebook = "nb-clean clean"
+ansible-galaxy-install = "ansible-galaxy install"
+lint-python-black = "black --check ."
+lint-python-black-fix = "black ."
+lint-python-ruff = "ruff check ."
+lint-python-ruff-fix = "ruff check --fix ."
+lint-python-isort = "isort --check-only ."
+lint-python-isort-fix = "isort ."
+lint-yaml = "yamllint ."
+static-type-check-python = "mypy --install-types --non-interactive"
