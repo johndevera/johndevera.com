@@ -23,6 +23,7 @@ nb-clean = "3.2.0"
 poethepoet = "0.24.4"
 ruff = "0.2.2"
 yamllint = "1.35.1"
+watchdog = "4.0.0" # streamlit
 
 [build-system]
 requires = ["poetry-core"]

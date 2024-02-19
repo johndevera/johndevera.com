@@ -2,7 +2,16 @@
 echo "Calling: $0"
 
 # install vscode
-brew install --cask visual-studio-code
+app_name="Visual Studio Code"
+brew_name="visual-studio-code"
+
+app_cmd="/Applications/$app_name.app"
+if [ -e "$app_cmd" ];then
+    echo "$app_cmd already installed."
+else
+    brew install --cask $brew_name
+    echo "$app_cmd now installed."
+fi
 
 # Add Visual Studio Code (code)
 # cat << EOF >> ~/.zprofile
@@ -19,3 +28,4 @@ code --install-extension donjayamanne.githistory
 code --install-extension mhutchie.git-graph
 code --install-extension csv
 code --install-extension yzhang.markdown-all-in-one
+code --install-extension ms-toolsai.jupyter

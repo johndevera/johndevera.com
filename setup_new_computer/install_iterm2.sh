@@ -1,10 +1,13 @@
 #!/bin/sh
 echo "Calling: $0"
 
-if [ -e /Applications/iTerm.app ]
-then
-    echo "ok"
+app_name="iTerm"
+brew_name="iterm2"
+
+app_cmd="/Applications/$app_name.app"
+if [ -e "$app_cmd" ];then
+    echo "$app_cmd already installed."
 else
-    brew install --cask iterm2
-    echo "nok"
+    brew install --cask $brew_name
+    echo "$app_cmd now installed."
 fi
